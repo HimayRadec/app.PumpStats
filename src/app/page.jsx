@@ -1,16 +1,13 @@
-import LoginForm from "@/components/LoginForm";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { HomeNavbar } from "@/components/Navbars";
+
 
 export default async function Home() {
-  const session = await getServerSession(authOptions);
 
-  if (session) redirect("/dashboard");
 
   return (
-    <main>
-      <LoginForm />
+    <main className="flex flex-col justify-center align-center">
+      <HomeNavbar />
+      <h1>Pump Stats</h1>
     </main>
   );
 }

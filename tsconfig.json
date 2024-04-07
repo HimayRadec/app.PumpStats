@@ -41,7 +41,8 @@
     "src/app/page.jsx",
     "src/components/LoginForm.jsx",
     "src/components/UserInfo.jsx",
-    "src/components/RegisterForm.jsx"
+    "src/components/RegisterForm.jsx",
+    "src/components/Navbars.jsx"
   ],
   "exclude": [
     "node_modules"
