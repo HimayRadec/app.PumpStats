@@ -1,0 +1,11 @@
+.setNumber {
+   margin: 0 10px;
+}
+
+input {
+   color: black;
+   margin: 1px;
+   border: 1px solid lightgray;
+   border-radius: 2px;
+   width: 100px;
+}
