@@ -1,6 +1,6 @@
-import { UserNavbar } from '@/components/Navbars'
-import CreateWorkout from '@/components/Buttons/CreateWorkout'
-import UserHome from '@/components/User/UserHome'
+import { UserNavbar } from '@/app/components/Navbars'
+import CreateWorkout from '@/app/components/Buttons/CreateWorkout'
+import UserHome from '@/app/components/User/UserHome'
 import React from 'react'
 
 export default function page() {

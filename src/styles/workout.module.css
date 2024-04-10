@@ -1,0 +1,35 @@
+.statInputContainer {
+   display: flex;
+   position: relative;
+   align-items: center;
+   border-radius: 5px;
+}
+
+
+.statInput {
+   padding: 1px;
+   border: 1px solid #8f8f8f;
+   border-radius: 3px;
+   margin: 3px 0px;
+
+}
+
+
+.statLabel {
+   position: absolute;
+   right: 2px;
+   color: #f60404;
+}
+
+/* Remove Spinners */
+/* Chrome, Safari, Edge, Opera */
+.statInput::-webkit-outer-spin-button,
+.statInput::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+
+/* Firefox */
+.statInput[type=number] {
+   -moz-appearance: textfield;
+}

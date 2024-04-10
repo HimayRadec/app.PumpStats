@@ -32,17 +32,17 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/register/page.jsx",
-    "src/app/register/page.jsx",
+    "src/app/(pages)/register/page.jsx",
+    "src/app/(pages)/register/page.jsx",
     "src/app/api/userExists/route.js",
     "src/app/api/register/route.js",
     "src/app/api/auth/[...nextauth]/route.js",
     "src/app/Providers.js",
     "src/app/page.jsx",
-    "src/components/LoginForm.jsx",
-    "src/components/UserInfo.jsx",
-    "src/components/RegisterForm.jsx",
-    "src/components/Navbars.jsx"
+    "src/app/components/LoginForm.jsx",
+    "src/app/components/UserInfo.jsx",
+    "src/app/components/RegisterForm.jsx",
+    "src/app/components/Navbars.jsx"
   ],
   "exclude": [
     "node_modules"

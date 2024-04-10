@@ -1,7 +1,6 @@
 'use client';
 import React from 'react'
-import '@/styles/workout.css'
-import { WorkoutView } from '@/components/Workout/WorkoutComponents'
+import { WorkoutView } from '@/app/components/Workout/WorkoutComponents'
 
 interface SetData {
    setNumber: number
