@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import styles from '@/styles/workout.module.css'
 
 interface SetData {
@@ -42,6 +42,34 @@ interface WorkoutProps {
    workoutData: WorkoutData
 }
 
+interface WorkoutNameProps {
+   workoutName: string;
+   onNameChange: (newName: string) => void;
+}
+
+export function WorkoutName({ workoutName, onNameChange }: WorkoutNameProps) {
+   const [name, setName] = useState(workoutName);
+
+   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const newName = event.target.value;
+      setName(newName);
+      onNameChange(newName);
+   };
+
+   return (
+      <div>
+         <h2>Workout Name:</h2>
+         <input
+            type="text"
+            value={name}
+            onChange={handleChange}
+            className='text-gray-950'
+         />
+      </div>
+   );
+}
+
+
 // Only Allow Numeric Input and Limit to 3 Characters
 function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
    const inputValue = event.target.value;
@@ -49,28 +77,24 @@ function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
    event.target.value = numericValue.slice(0, 3); // Take first three characters of the numeric value
 }
 
-export function WorkoutComponents() {
+export function Set({ setNumber, weight, reps }: Set) {
    return (
-      <div>WorkoutComponents</div>
-   )
-}
+      <div className={`${styles.setContainer} flex gap-2 w-fit`}>
+         <div className={`${styles.setNumber} no-margin w-5`}>{setNumber}</div>
 
-export function Set({ setNumber, reps, weight }: Set) {
-   return (
-      <div className={`${styles.setContainer} grid grid-cols-3 gap-5 w-fit`}>
-         <h3 className={`${styles.setNumber} text-left w-fit border`}>{setNumber}</h3>
-
-         <div className={`${styles.statInputContainer}`} tabIndex={0}>
+         <div className={`${styles.statInputContainer} flex no-margin`}>
             <h4 className={`${styles.statLabel} select-none`}>lbs</h4>
-            <input className={`${styles.statInput}`} type="number" max="999" onInput={handleInputChange} />
+            <input className={`${styles.statInput}`} value={weight} type="number" max="999" onInput={handleInputChange} />
          </div>
 
-         <div className={`${styles.statInputContainer} relative flex items-center`}>
-            <h4 className={`${styles.statLabel} absolute right-1 select-none`}>reps</h4>
-            <input className={`${styles.statInput}`} type="number" max="999" onInput={handleInputChange} />
+         <div className={`${styles.statInputContainer} flex no-margin`}>
+            <h4 className={`${styles.statLabel} select-none`}>reps</h4>
+            <input className={`${styles.statInput}`} value={reps} type="number" max="999" onInput={handleInputChange} />
          </div>
       </div>
    );
+
+
 }
 
 
@@ -80,7 +104,7 @@ export function Exercise(exerciseData: ExerciseProps) {
          <h3>{exerciseData.exerciseData.exerciseName}</h3>
          {exerciseData.exerciseData.sets.map((set, index) => (
             <div key={index}>
-               <Set setNumber={set.setNumber} reps={set.reps} weight={set.weight} />
+               <Set setNumber={set.setNumber} weight={set.weight} reps={set.reps} />
             </div>
          ))}
       </div>
@@ -90,13 +114,15 @@ export function Exercise(exerciseData: ExerciseProps) {
 export function WorkoutView(workoutData: WorkoutProps) {
 
    return (
-      <div>
-         <h2>{workoutData.workoutData.workoutName}</h2>
-         {workoutData.workoutData.exercises.map((exercise, index) => (
-            <div key={index}>
-               <Exercise exerciseData={exercise} />
-            </div>
-         ))}
+      <div className='w-fit m-auto'>
+         <div className='m-3'>
+            <h2>{workoutData.workoutData.workoutName}</h2>
+            {workoutData.workoutData.exercises.map((exercise, index) => (
+               <div key={index}>
+                  <Exercise exerciseData={exercise} />
+               </div>
+            ))}
+         </div>
       </div>
    )
 }

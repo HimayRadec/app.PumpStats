@@ -1,6 +1,6 @@
 'use client';
-import React from 'react'
-import { WorkoutView } from '@/app/components/Workout/WorkoutComponents'
+import React, { useState } from 'react';
+import { WorkoutName, WorkoutView } from '@/app/components/Workout/WorkoutComponents'
 
 interface SetData {
    setNumber: number
@@ -89,14 +89,36 @@ let sampleWorkoutData: WorkoutData = {
    ]
 }
 
+function saveWorkout() {
+   // Save workout data to database
+   console.log('Workout Saved');
+   console.log(sampleWorkoutData);
+}
 
 
-function page() {
+
+function Page() {
+   const [workoutName, setWorkoutName] = useState('First Day');
+
+   function printWorkoutName() {
+      console.log(workoutName);
+   }
+
+   const handleNameChange = (newName: string) => {
+      setWorkoutName(newName);
+   };
+
+   const saveWorkout = () => {
+      // Implement your save workout logic here
+   };
+
    return (
-      <div>
+      <div className='flex flex-col w-fit m-auto align-items'>
+         <WorkoutName workoutName={workoutName} onNameChange={handleNameChange} />
          <WorkoutView workoutData={sampleWorkoutData} />
+         <button className='border' onClick={printWorkoutName}>Save Workout</button>
       </div>
    );
 }
 
-export default page
+export default Page
