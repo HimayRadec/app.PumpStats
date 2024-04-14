@@ -1,6 +1,6 @@
 import { connectMongoDB } from "@/lib/mongodb";
 import { NextResponse } from "next/server";
-import EmailList from "@/models/emailList";
+import EmailList from "@/models/EmailList";
 
 export async function POST(req) {
    try {
