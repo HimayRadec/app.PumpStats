@@ -6,6 +6,15 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --font-roboto: 'Roboto', sans-serif;
+  --dark-background-color: #151515;
+  --dark-foreground-color: #363636;
+  --dark-primary-color: #03DAC6;
+  --dark-font-color: #FFFFFF;
+  --dark-secondary-font-color: #ffffffb0;
+
+  --error-color: #CF6679;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,9 +27,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background: var(--dark-background-color);
 }
 
 @layer utilities {

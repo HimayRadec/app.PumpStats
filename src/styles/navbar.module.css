@@ -1,0 +1,23 @@
+.navMenuContainer {
+   background-color: var(--dark-foreground-color);
+   display: flex;
+   align-items: center;
+   position: fixed;
+   flex-flow: column;
+   gap: 20px;
+   height: 100vh;
+}
+
+.navMenuContainer ul {
+   border: 1px solid red;
+}
+
+.navLink {
+   color: var(--dark-secondary-font-color);
+   text-align: start;
+   border: 1px solid red;
+}
+
+.navLink:hover {
+   color: var(--dark-font-color);
+}
