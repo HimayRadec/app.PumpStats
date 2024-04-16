@@ -5,15 +5,15 @@ export default async function Home() {
 
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen">
-      <div className="text-center">
+    <main className="">
+      <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 text-center">
         <h1 className="text-4xl mb-1 lg:text-6xl">
           PUMP STATS
         </h1>
         <h1>Coming Soon</h1>
-      </div>
-      <div className="mt-10">
-        <NewsletterSignUp />
+        <div className="mt-10">
+          <NewsletterSignUp />
+        </div>
       </div>
     </main>
 
