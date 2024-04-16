@@ -25,3 +25,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Naming Convetions
 For local CSS modules use camelCase class naming. 
 For global CSS files use kebab-case naming.
+
+## Tailwind Responsive Design
+https://tailwindcss.com/docs/responsive-design
+
+Work mobile first when using tailwind.

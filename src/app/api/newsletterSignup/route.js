@@ -9,9 +9,10 @@ export async function POST(req) {
       const existingEmail = await EmailList.findOne({ email });
 
       if (existingEmail) {
-         return NextResponse.json({ message: "User already exists." });
+         return NextResponse.json({ message: "User already exists." }, { status: 409 });
       }
       else {
+         // Gets What User Signup Number The User Is
          const count = await EmailList.countDocuments();
          await EmailList.create({ email, userNumber: count + 1 });
 

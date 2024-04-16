@@ -1,21 +1,22 @@
-import { HomeNavbar } from "@/app/components/Navbars";
-import NewsletterSignUp from "./components/Input/NewsletterSignUp";
+import NewsletterSignUp from "./components/Forms/NewsletterSignUp";
 
 
 export default async function Home() {
 
 
   return (
-    <main className="">
-      {/* <HomeNavbar /> */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-        <h1 className="text-6xl mb-1">
+    <main className="flex flex-col items-center justify-center min-h-screen">
+      <div className="text-center">
+        <h1 className="text-4xl mb-1 lg:text-6xl">
           PUMP STATS
         </h1>
         <h1>Coming Soon</h1>
+      </div>
+      <div className="mt-10">
         <NewsletterSignUp />
       </div>
     </main>
+
 
   );
 }
