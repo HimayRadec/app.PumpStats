@@ -38,7 +38,7 @@
     "src/app/api/register/route.js",
     "src/app/api/auth/[...nextauth]/route.js",
     "src/app/Providers.js",
-    "src/app/page.jsx",
+    "src/app/page.tsx",
     "src/app/components/LoginForm.jsx",
     "src/app/components/UserInfo.jsx",
     "src/app/components/RegisterForm.jsx",

@@ -1,5 +1,11 @@
 import NewsletterSignUp from "./components/Forms/NewsletterSignUp";
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'Home | Pump Stats',
+  description: 'Pump Stats Workout Tracker',
+  metadataBase: new URL('https://pumpstats.app'),
+};
 
 export default async function Home() {
 
