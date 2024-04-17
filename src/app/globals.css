@@ -39,3 +39,11 @@ body {
 .roboto {
   font-family: var(--font-roboto);
 }
+
+.dashboard-card {
+  background-color: var(--dark-foreground-color);
+}
+
+.side-navbar {
+  background-color: var(--dark-foreground-color);
+}
