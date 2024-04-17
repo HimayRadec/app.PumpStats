@@ -7,6 +7,8 @@ import {
    CardHeader,
    CardTitle,
 } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+
 
 // [  card                 cols x rows]
 // weekly workout tracker     2 x 1
@@ -30,23 +32,21 @@ export default function Dashboard() {
 
    return (
       <div className="flex">
-         <SideNavbar className="px-5" />
-         <div className="flex-1 grid grid-cols-6 grid-rows-5 gap-x-5 gap-y-10 p-10">
-            <div>
-               <Card>
-                  <CardHeader>
-                     <CardTitle>Card Title</CardTitle>
-                     <CardDescription>Card Description</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                     <p>Card Content</p>
-                  </CardContent>
-                  <CardFooter>
-                     <p>Card Footer</p>
-                  </CardFooter>
-               </Card>
+         <div>
+            <Button>Button</Button>
+            <Card>
+               <CardHeader>
+                  <CardTitle>Card Title</CardTitle>
+                  <CardDescription>Card Description</CardDescription>
+               </CardHeader>
+               <CardContent>
+                  <p>Card Content</p>
+               </CardContent>
+               <CardFooter>
+                  <p>Card Footer</p>
+               </CardFooter>
+            </Card>
 
-            </div>
          </div>
       </div>
 

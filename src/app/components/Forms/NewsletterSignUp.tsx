@@ -1,6 +1,9 @@
 'use client'
 import React from 'react'
-import styles from '@/styles/newsletter.module.css'
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+
+
 
 function NewsletterSignUp() {
 
@@ -66,25 +69,23 @@ function NewsletterSignUp() {
 
    return (
       <>
-         {!submitted && ( // Render form only if not submitted
-            <form onSubmit={handleClick} className={`${styles.signupContainer} flex flex-col text-center`}>
-               <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className={`${styles.emailInputField}`}
-                  placeholder={placeholderText}
-               />
-               <button
-                  type="submit"
-                  className={`${styles.emailSignupButton} ${buttonClass}`}
-               >
-                  {buttonText}
-               </button>
+         {/* Render form only if not submitted */}
+         {!submitted && (
+            <form onSubmit={handleClick} className={`flex flex-col text-center`}>
+               <div>
+                  <Input
+                     type="email"
+                     placeholder={placeholderText}
+                     value={email}
+                     onChange={(e) => setEmail(e.target.value)}
+                  />
+               </div>
+               <div className='mt-5'><Button className="w-full" type="submit">{buttonText}</Button></div>
             </form>
          )}
-         {submitted && ( // Render success message after submission
-            <div className={`${styles.signupContainer} flex flex-col text-center`}>
+         {/* Render success message after submission */}
+         {submitted && (
+            <div className={`flex flex-col text-center`}>
                <p>Thank you for signing up!</p>
             </div>
          )}
