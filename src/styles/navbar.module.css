@@ -2,7 +2,6 @@
    background-color: var(--dark-foreground-color);
    display: flex;
    align-items: center;
-   position: fixed;
    flex-flow: column;
    gap: 20px;
    height: 100vh;
