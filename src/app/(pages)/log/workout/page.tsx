@@ -1,6 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import { WorkoutName, WorkoutView } from '@/app/components/Workout/WorkoutComponents'
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 interface SetData {
    setNumber: number
@@ -90,7 +92,6 @@ let sampleWorkoutData: WorkoutData = {
 }
 
 function saveWorkout() {
-   // Save workout data to database
    console.log('Workout Saved');
    console.log(sampleWorkoutData);
 }
@@ -113,10 +114,14 @@ function Page() {
    };
 
    return (
-      <div className='flex flex-col w-fit m-auto align-items'>
+      <div className='flex flex-col w-fit m-auto align-items p-3'>
+
          <WorkoutName workoutName={workoutName} onNameChange={handleNameChange} />
          <WorkoutView workoutData={sampleWorkoutData} />
-         <button className='border' onClick={printWorkoutName}>Save Workout</button>
+
+         <Button onClick={saveWorkout} className='m-3'>
+            Save Workout
+         </Button>
       </div>
    );
 }

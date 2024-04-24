@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import styles from '@/styles/workout.module.css'
+
+import { Input } from '@/components/ui/input';
 
 interface SetData {
    setNumber: number
@@ -59,7 +60,7 @@ export function WorkoutName({ workoutName, onNameChange }: WorkoutNameProps) {
    return (
       <div>
          <h2>Workout Name:</h2>
-         <input
+         <Input
             type="text"
             value={name}
             onChange={handleChange}
@@ -79,17 +80,26 @@ function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
 
 export function Set({ setNumber, weight, reps }: Set) {
    return (
-      <div className={`${styles.setContainer} flex gap-2 w-fit`}>
-         <div className={`${styles.setNumber} no-margin w-5`}>{setNumber}</div>
+      <div className={`flex gap-x-2 items-center`}>
+         <h1 className='min-w-3'>{setNumber}</h1>
 
-         <div className={`${styles.statInputContainer} flex no-margin`}>
-            <h4 className={`${styles.statLabel} select-none`}>lbs</h4>
-            <input className={`${styles.statInput}`} value={weight} type="number" max="999" onInput={handleInputChange} />
+         <div className='relative flex items-center'>
+            <Input
+               type="number"
+               value={weight}
+               onChange={handleInputChange}
+            />
+            <p className='absolute right-2'>lbs</p>
          </div>
 
-         <div className={`${styles.statInputContainer} flex no-margin`}>
-            <h4 className={`${styles.statLabel} select-none`}>reps</h4>
-            <input className={`${styles.statInput}`} value={reps} type="number" max="999" onInput={handleInputChange} />
+         <div className='relative flex items-center'>
+            <Input
+               type="number"
+               value={reps}
+               onChange={handleInputChange}
+               className='appearance-none'
+            />
+            <p className='absolute right-2'>reps</p>
          </div>
       </div>
    );
