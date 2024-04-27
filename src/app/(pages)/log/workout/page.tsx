@@ -99,7 +99,7 @@ function saveWorkout() {
 
 
 function Page() {
-   const [workoutName, setWorkoutName] = useState('First Day');
+   const [workoutName, setWorkoutName] = useState('Chest Day');
 
    function printWorkoutName() {
       console.log(workoutName);
@@ -114,14 +114,19 @@ function Page() {
    };
 
    return (
-      <div className='flex flex-col w-fit m-auto align-items p-3'>
-
-         <WorkoutName workoutName={workoutName} onNameChange={handleNameChange} />
-         <WorkoutView workoutData={sampleWorkoutData} />
-
-         <Button onClick={saveWorkout} className='m-3'>
-            Save Workout
-         </Button>
+      <div className="w-screen">
+         <div className="w-fulll flex justify-between bg-background	">
+            <Button className='bg-transparent text-primary hover:bg-transparent hover:text-orange-700 font-light text-base'>CANCEL</Button>
+            <Button className='bg-transparent text-primary hover:bg-transparent hover:text-orange-700 font-light text-base'>31:45</Button>
+            <Button className='bg-transparent text-primary hover:bg-transparent hover:text-orange-700 font-light text-base'>SAVE</Button>
+         </div>
+         <div className='flex flex-col w-fit m-auto align-items p-3'>
+            <WorkoutName workoutName={workoutName} onNameChange={handleNameChange} />
+            <WorkoutView workoutData={sampleWorkoutData} />
+            <Button onClick={saveWorkout} className='m-3'>
+               Add Exercise
+            </Button>
+         </div>
       </div>
    );
 }
