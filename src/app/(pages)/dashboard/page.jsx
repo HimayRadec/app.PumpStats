@@ -2,6 +2,7 @@ import React from 'react'
 
 import AreaChartComponent from '@/components/charts/AreaChart';
 import MacrosPieChart from '@/components/charts/PieChart';
+import { DetailedMacrosPieChart } from '@/components/charts/PieChart';
 
 
 export default function Dashboard() {
@@ -16,8 +17,8 @@ export default function Dashboard() {
                <MacrosPieChart />
             </GridItem>
 
-            <GridItem title="Line Chart">
-               {/* <LineChart /> */}
+            <GridItem title="Detailed Pie Chart">
+               <DetailedMacrosPieChart />
             </GridItem>
          </div>
       </main>

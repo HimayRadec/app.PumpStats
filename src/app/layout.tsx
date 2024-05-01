@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { AuthProvider } from "./Providers";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -29,7 +30,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
