@@ -42,7 +42,8 @@
     "src/app/components/LoginForm.jsx",
     "src/app/components/UserInfo.jsx",
     "src/app/components/RegisterForm.jsx",
-    "src/app/components/Navbars.jsx"
+    "src/app/components/Navbars.jsx",
+    "src/components/charts/AreaChart.jsx"
   ],
   "exclude": [
     "node_modules"

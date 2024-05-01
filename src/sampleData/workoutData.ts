@@ -1,6 +1,6 @@
 // sampleData.ts
 
-import { WorkoutData } from '@/types/workout';
+import { WorkoutData } from '@/types/workoutTypes';
 
 export const firstSampleWorkout: WorkoutData = {
    workoutName: 'Chest Day',
