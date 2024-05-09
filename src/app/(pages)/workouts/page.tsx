@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Exercise() {
    return (
-      <div className="relative h-screen flex justify-center w-screen">
+      <div className="relative h-screen flex justify-center">
          <div className='w-11/12'>
             <Card className='my-5 w-full'>
                <CardHeader>

@@ -1,5 +1,7 @@
 'use client'
 import React from 'react'
+
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 import { firstSampleUserProfile } from '@/sampleData/userProfileData'
@@ -14,7 +16,9 @@ export default function Dashboard() {
       <div className='container flex flex-col items-center'>
          <Label className='text-2xl font-bold'>No Workout Yet</Label>
          <p>Current pathname: {pathname}</p>
-         <Button className='m-3'>Add a Workout</Button>
+         <Button className='m-3'>
+            <Link href="/workouts">Add A Workout</Link>
+         </Button>
       </div>
    )
 }
