@@ -5,6 +5,7 @@ import { WorkoutData } from '@/types/workoutTypes';
 export const firstSampleWorkout: WorkoutData = {
    workoutName: 'Chest Day',
    notes: 'This is a sample workout for chest day',
+   workoutId: '1',
    exercises: [
       {
          exerciseName: 'Bench Press',

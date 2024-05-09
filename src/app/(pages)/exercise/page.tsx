@@ -1,111 +1,27 @@
 import React from 'react'
+import { firstSampleUserProfile } from '@/sampleData/userProfileData'
+import { Label } from '@/components/ui/label'
 
-import {
-   Card,
-   CardContent,
-   CardDescription,
-   CardFooter,
-   CardHeader,
-   CardTitle,
-} from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-
-
-export default function Exercise() {
+export default function Dashboard() {
    return (
-      <div className="relative h-screen flex justify-center w-screen">
-         <div className='w-11/12'>
-            <Card className='my-5 w-full'>
-               <CardHeader>
-                  <CardTitle>Workout Name</CardTitle>
-                  <CardDescription>Exercise 1, Exercise 2, Exercise 3, Exercise 4,</CardDescription>
-               </CardHeader>
-               <CardContent className='flex gap-x-2'>
-                  <p>Total Load</p>
-                  <p>Total Sets</p>
-                  <p>Total Reps</p>
-               </CardContent>
-               <CardFooter>
-                  <p>Last Logged 4/25/2024</p>
-               </CardFooter>
-            </Card>
-
-            <Card className='my-5 w-full'>
-               <CardHeader>
-                  <CardTitle>Workout Name</CardTitle>
-                  <CardDescription>Exercise 1, Exercise 2, Exercise 3, Exercise 4,</CardDescription>
-               </CardHeader>
-               <CardContent className='flex gap-x-2'>
-                  <p>Total Load</p>
-                  <p>Total Sets</p>
-                  <p>Total Reps</p>
-               </CardContent>
-               <CardFooter>
-                  <p>Last Logged 4/25/2024</p>
-               </CardFooter>
-            </Card>
-
-            <Card className='my-5 w-full'>
-               <CardHeader>
-                  <CardTitle>Workout Name</CardTitle>
-                  <CardDescription>Exercise 1, Exercise 2, Exercise 3, Exercise 4,</CardDescription>
-               </CardHeader>
-               <CardContent className='flex gap-x-2'>
-                  <p>Total Load</p>
-                  <p>Total Sets</p>
-                  <p>Total Reps</p>
-               </CardContent>
-               <CardFooter>
-                  <p>Last Logged 4/25/2024</p>
-               </CardFooter>
-            </Card>
-
-            <Card className='my-5 w-full'>
-               <CardHeader>
-                  <CardTitle>Workout Name</CardTitle>
-                  <CardDescription>Exercise 1, Exercise 2, Exercise 3, Exercise 4,</CardDescription>
-               </CardHeader>
-               <CardContent className='flex gap-x-2'>
-                  <p>Total Load</p>
-                  <p>Total Sets</p>
-                  <p>Total Reps</p>
-               </CardContent>
-               <CardFooter>
-                  <p>Last Logged 4/25/2024</p>
-               </CardFooter>
-            </Card>
-
-            <Card className='my-5 w-full'>
-               <CardHeader>
-                  <CardTitle>Workout Name</CardTitle>
-                  <CardDescription>Exercise 1, Exercise 2, Exercise 3, Exercise 4,</CardDescription>
-               </CardHeader>
-               <CardContent className='flex gap-x-2'>
-                  <p>Total Load</p>
-                  <p>Total Sets</p>
-                  <p>Total Reps</p>
-               </CardContent>
-               <CardFooter>
-                  <p>Last Logged 4/25/2024</p>
-               </CardFooter>
-            </Card>
-
-            <Card className='my-5 w-full'>
-               <CardHeader>
-                  <CardTitle>Workout Name</CardTitle>
-                  <CardDescription>Exercise 1, Exercise 2, Exercise 3, Exercise 4,</CardDescription>
-               </CardHeader>
-               <CardContent className='flex gap-x-2'>
-                  <p>Total Load</p>
-                  <p>Total Sets</p>
-                  <p>Total Reps</p>
-               </CardContent>
-               <CardFooter>
-                  <p>Last Logged 4/25/2024</p>
-               </CardFooter>
-            </Card>
+      <div className='container w-screen border flex flex-col items-center'>
+         <div className='w-4/5 border'>
+            <div className='workout-header flex items-center gap-x-2'>
+               <Label className='text-2xl font-bold border'>Todays Workout</Label>
+               <Label className='text-lg font-bold m-auto border'>Workout Name</Label>
+               <div className='flex gap-x-2 items-center mr-0 border'>
+                  <Label>0 Sets</Label>
+                  <Label>0 Reps</Label>
+                  <Label>0 Load</Label>
+                  <Label>0 Minutes</Label>
+               </div>
+            </div>
          </div>
-         <Button className='absolute fixed bottom-5 w-11/12	'>New Workout</Button>
+         <div className='border w-full grid grid-cols-2	'>
+            <Label className='col-span-2 text-center text-xl'>Chest Day</Label>
+            <Label className='text-center'>Bench</Label>
+            <Label className='text-center'>Bench</Label>
+         </div>
       </div>
    )
 }
