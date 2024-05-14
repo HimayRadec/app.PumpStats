@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 
 interface SetData {
    setNumber: number
@@ -47,6 +49,8 @@ interface WorkoutNameProps {
    workoutName: string;
    onNameChange: (newName: string) => void;
 }
+
+
 
 export function WorkoutName({ workoutName, onNameChange }: WorkoutNameProps) {
    const [name, setName] = useState(workoutName ? workoutName : 'Workout Name');
@@ -117,17 +121,25 @@ export function Set({ setNumber, weight, reps }: Set) {
 
 
 export function Exercise(exerciseData: ExerciseProps) {
+   function addSet() {
+      exerciseData.exerciseData.sets.push({
+         setNumber: exerciseData.exerciseData.sets.length + 1,
+         reps: 0,
+         weight: 0,
+      });
+   }
+
    return (
       <div>
-         <h3 className='font-semibold'>
-            {exerciseData.exerciseData.exerciseName}
-         </h3>
+         <Input className='font-semibold'>
+         </Input>
          {exerciseData.exerciseData.sets.map((set, index) => (
             <div key={index}>
                <Set setNumber={set.setNumber} weight={set.weight} reps={set.reps} />
             </div>
          ))}
-         <h1 className='text-primary py-2 border-t	border-input'>ADD SET</h1>
+         <Separator />
+         <Button variant="link" onClick={addSet}>ADD SET</Button>
       </div>
    )
 }

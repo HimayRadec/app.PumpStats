@@ -130,9 +130,9 @@ function Page() {
 
    return (
       <div className="w-full">
-         <div className="w-fulll flex justify-between bg-background	">
+         <div className="flex justify-between bg-background	">
             <Button className='bg-transparent text-primary hover:bg-transparent hover:text-orange-700 font-light text-base'>
-               <Link href="/workouts">CANCEL</Link>
+               <Link href="/workout/workouts">CANCEL</Link>
             </Button>
             <Button className='bg-transparent text-primary hover:bg-transparent hover:text-orange-700 font-light text-base'>
                {formattedTime}

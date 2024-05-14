@@ -11,7 +11,7 @@ import {
 import { Button } from "@/components/ui/button"
 
 
-export default function Exercise() {
+export default function Workouts() {
    return (
       <div className="relative flex flex-col items-center justify-center border">
          <div className='w-11/12'>
@@ -105,8 +105,8 @@ export default function Exercise() {
                </CardFooter>
             </Card>
          </div>
-         <Button className='w-11/12	mb-5 '>
-            <Link className=' w-full h-full flex items-center justify-center' href="/workouts/newWorkout">
+         <Button className='w-11/12	mb-5 p-0'>
+            <Link className='border w-full h-full flex items-center justify-center' href="/workout/logWorkout">
                New Workout
             </Link>
          </Button>
