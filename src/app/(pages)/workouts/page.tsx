@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 import {
    Card,
    CardContent,
@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Exercise() {
    return (
-      <div className="relative h-screen flex justify-center">
+      <div className="relative flex flex-col items-center justify-center border">
          <div className='w-11/12'>
             <Card className='my-5 w-full'>
                <CardHeader>
@@ -105,7 +105,11 @@ export default function Exercise() {
                </CardFooter>
             </Card>
          </div>
-         <Button className='absolute fixed bottom-5 w-11/12	'>New Workout</Button>
+         <Button className='w-11/12	mb-5 '>
+            <Link className=' w-full h-full flex items-center justify-center' href="/workouts/newWorkout">
+               New Workout
+            </Link>
+         </Button>
       </div>
    )
 }

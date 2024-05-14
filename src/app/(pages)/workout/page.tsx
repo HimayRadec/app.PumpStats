@@ -15,7 +15,6 @@ export default function Dashboard() {
    return (
       <div className='container flex flex-col items-center'>
          <Label className='text-2xl font-bold'>No Workout Yet</Label>
-         <p>Current pathname: {pathname}</p>
          <Button className='m-3'>
             <Link href="/workouts">Add A Workout</Link>
          </Button>

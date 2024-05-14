@@ -77,7 +77,7 @@ export default function Dashboard() {
 
    return (
 
-      <div className="grid grid-cols-1 grid-rows-4 md:grid-cols-3 gap-3 p-3 h-full">
+      <div className="border grid grid-cols-1 grid-rows-4 md:grid-cols-3 gap-3 p-3 h-full">
          <Card className="h-full">Calories</Card>
          <Card>Micros</Card>
          <Card className="h-full">Macros</Card>

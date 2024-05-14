@@ -1,7 +1,7 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { WorkoutName, WorkoutView } from '@/app/components/Workout/WorkoutComponents'
-import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 interface SetData {
@@ -22,7 +22,6 @@ interface WorkoutData {
    totalVolume?: number
    exercises: ExerciseData[]
 }
-
 
 let sampleWorkoutData: WorkoutData = {
    workoutName: 'Chest Day',
@@ -96,13 +95,29 @@ function saveWorkout() {
    console.log(sampleWorkoutData);
 }
 
-
-
 function Page() {
    const [workoutName, setWorkoutName] = useState('Chest Day');
 
-   function printWorkoutName() {
-      console.log(workoutName);
+   const [time, setTime] = useState(0);
+
+   useEffect(() => {
+      const intervalId = setInterval(() => {
+         setTime(prevTime => prevTime + 1);
+      }, 1000); // Update every second
+
+      // Cleanup function to clear the interval when the component unmounts
+      return () => clearInterval(intervalId);
+   }, []); // Run effect only once when component mounts
+
+   // Convert time to minutes and seconds
+   const minutes = Math.floor(time / 60);
+   const seconds = time % 60;
+
+   // Format minutes and seconds with leading zeros if needed
+   const formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+   function timeClicked() {
+      console.log('Time Clicked');
    }
 
    const handleNameChange = (newName: string) => {
@@ -114,10 +129,14 @@ function Page() {
    };
 
    return (
-      <div className="w-screen">
+      <div className="w-full">
          <div className="w-fulll flex justify-between bg-background	">
-            <Button className='bg-transparent text-primary hover:bg-transparent hover:text-orange-700 font-light text-base'>CANCEL</Button>
-            <Button className='bg-transparent text-primary hover:bg-transparent hover:text-orange-700 font-light text-base'>31:45</Button>
+            <Button className='bg-transparent text-primary hover:bg-transparent hover:text-orange-700 font-light text-base'>
+               <Link href="/workouts">CANCEL</Link>
+            </Button>
+            <Button className='bg-transparent text-primary hover:bg-transparent hover:text-orange-700 font-light text-base'>
+               {formattedTime}
+            </Button>
             <Button className='bg-transparent text-primary hover:bg-transparent hover:text-orange-700 font-light text-base'>SAVE</Button>
          </div>
          <div className='flex flex-col w-fit m-auto align-items p-3'>
