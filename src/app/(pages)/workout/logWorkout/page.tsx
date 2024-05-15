@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { WorkoutName, WorkoutView } from '@/app/components/Workout/WorkoutComponents'
+import WorkoutDetails from '@/components/WorkoutDetails';
 import { Button } from '@/components/ui/button';
 
 interface SetData {
@@ -95,7 +96,7 @@ function saveWorkout() {
    console.log(sampleWorkoutData);
 }
 
-function Page() {
+function LogWorkout() {
    const [workoutName, setWorkoutName] = useState('Chest Day');
 
    const [time, setTime] = useState(0);
@@ -140,8 +141,7 @@ function Page() {
             <Button className='bg-transparent text-primary hover:bg-transparent hover:text-orange-700 font-light text-base'>SAVE</Button>
          </div>
          <div className='flex flex-col w-fit m-auto align-items p-3'>
-            <WorkoutName workoutName={workoutName} onNameChange={handleNameChange} />
-            <WorkoutView workoutData={sampleWorkoutData} />
+            <WorkoutDetails workoutData={sampleWorkoutData} />
             <Button onClick={saveWorkout} className='m-3'>
                Add Exercise
             </Button>
@@ -150,4 +150,4 @@ function Page() {
    );
 }
 
-export default Page
+export default LogWorkout

@@ -23,23 +23,13 @@ interface WorkoutData {
    exercises: ExerciseData[]
 }
 
-
-interface Set {
-   setNumber: number;
-   reps: number;
-   weight: number;
-   restTime?: number;
-   startTime?: number;
-   endTime?: number;
-}
-
-interface Exercise {
+interface ExerciseData {
    exerciseName: string;
-   sets: Set[];
+   sets: SetData[];
 }
 
 interface ExerciseProps {
-   exerciseData: Exercise
+   exerciseData: ExerciseData
 }
 interface WorkoutProps {
    workoutData: WorkoutData
@@ -90,7 +80,7 @@ function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
    event.target.value = numericValue.slice(0, 3); // Take first three characters of the numeric value
 }
 
-export function Set({ setNumber, weight, reps }: Set) {
+export function Set({ setNumber, weight, reps }: SetData) {
    return (
       <div className={`flex gap-x-2 items-center my-2`}>
          <h1 className='min-w-3'>{setNumber}</h1>

@@ -30,3 +30,10 @@ For global CSS files use kebab-case naming.
 https://tailwindcss.com/docs/responsive-design
 
 Work mobile first when using tailwind.
+
+## Component Variants Explained
+
+## TODO:
+- Add onChange handle functions for exerciseName for variant for Input component
+@/src\components\ui\input.tsx
+

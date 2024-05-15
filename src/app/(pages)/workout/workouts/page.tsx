@@ -106,7 +106,7 @@ export default function Workouts() {
             </Card>
          </div>
          <Button className='w-11/12	mb-5 p-0'>
-            <Link className='border w-full h-full flex items-center justify-center' href="/workout/logWorkout">
+            <Link className='w-full h-full flex items-center justify-center' href="/workout/logWorkout">
                New Workout
             </Link>
          </Button>
