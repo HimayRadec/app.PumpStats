@@ -48,6 +48,11 @@ export default function RootLayout({
   const dateSelected = new Date();
 
   const [date, setDate] = React.useState<Date>(dateSelected)
+  const handleSelect = (selectedDate: Date | undefined) => {
+    if (selectedDate) {
+      setDate(selectedDate);
+    }
+  };
   const pathname = usePathname()
 
   var pumpStatsLogo = "BarChart4"
@@ -265,7 +270,7 @@ export default function RootLayout({
                 <Calendar
                   mode="single"
                   selected={date}
-                  onSelect={setDate}
+                  onSelect={handleSelect}
                   initialFocus
                 />
               </PopoverContent>
