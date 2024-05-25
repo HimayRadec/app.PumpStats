@@ -17,7 +17,7 @@ const authOptions: NextAuthConfig = {
                   id: "test-user-1",
                   userName: "test1",
                   name: "User 1",
-                  password: "pass",
+                  password: "password",
                   email: "test1@donotreply.com",
                },
             ];
