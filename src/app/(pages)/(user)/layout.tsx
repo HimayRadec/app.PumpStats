@@ -8,7 +8,6 @@ import { format } from "date-fns"
 
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
-import { Label } from "@/components/ui/label"
 
 import {
   Badge,
@@ -39,12 +38,14 @@ import {
   SheetContent,
   SheetTrigger
 } from "@/components/ui/sheet";
+import DisplayUsername from "@/components/layout/displayUsername"
+import AuthButton from "@/app/api/AuthButton.server"
 
-export default function RootLayout({
+export default function DashboardLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   const dateSelected = new Date();
 
   const [date, setDate] = React.useState<Date>(dateSelected)
@@ -251,7 +252,9 @@ export default function RootLayout({
               </div>
             </SheetContent>
           </Sheet>
-          <Label className="text-2xl font-bold">Hello Himay</Label>
+
+          <DisplayUsername />
+          {/* <AuthButton /> */}
           <div className="ml-auto mr-4">
             <Popover>
               <PopoverTrigger asChild>

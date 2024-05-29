@@ -12,14 +12,14 @@ import {
 
 export default async function Dashboard() {
 
-   const session = await auth();
-
 
    return (
 
       <div className="border grid grid-cols-1 grid-rows-4 md:grid-cols-3 gap-3 p-3 h-full">
-         <Card className="h-full">Calories for <span className="font-extrabold">{session?.user?.name}</span></Card>
-         <Card>Micros</Card>
+         <Card className="h-full">Calories for</Card>
+         <Card>
+            Micros
+         </Card>
          <Card className="h-full">Macros</Card>
 
          <Card className="row-span-3"> Body recovering</Card>
