@@ -1,4 +1,3 @@
-import AuthButton from "./api/AuthButton.server";
 import NewsletterSignUp from "./components/Forms/NewsletterSignUp";
 import { Metadata } from 'next';
 
@@ -13,7 +12,6 @@ export default async function Home() {
 
   return (
     <main className="">
-      <AuthButton />
       <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 text-center">
         <h1 className="text-3xl mb-1 font-extrabold tracking-tight lg:text-6xl">
           PUMP STATS

@@ -1,11 +1,11 @@
-import { connectMongoDB } from "@/lib/mongodb";
+import { connectToMongoDB } from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 import EmailList from "@/models/EmailList";
 
 export async function POST(req) {
    try {
       const { email } = await req.json();
-      await connectMongoDB();
+      await connectToMongoDB();
       const existingEmail = await EmailList.findOne({ email });
 
       if (existingEmail) {
