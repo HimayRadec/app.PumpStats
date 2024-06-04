@@ -39,7 +39,6 @@ import {
   SheetTrigger
 } from "@/components/ui/sheet";
 import DisplayUsername from "@/components/layout/displayUsername"
-import AuthButton from "@/app/api/AuthButton.server"
 
 export default function DashboardLayout({
   children,
