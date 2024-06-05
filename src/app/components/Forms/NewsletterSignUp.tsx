@@ -24,7 +24,7 @@ function NewsletterSignUp() {
       }
 
       try {
-         const res = await fetch('/api/newsletterSignup', {
+         const response = await fetch('/api/newsletterSignup', {
             method: 'POST',
             headers: {
                'Content-Type': 'application/json',
@@ -33,11 +33,11 @@ function NewsletterSignUp() {
          });
 
 
-         if (res.status === 201) {
+         if (response.status === 201) {
             console.log('Email added successfully');
             setSubmitted(true);
          }
-         else if (res.status === 409) {
+         else if (response.status === 409) {
             console.log('Email already exists in database');
 
             setPlaceholderText('Email already exists');
@@ -45,7 +45,7 @@ function NewsletterSignUp() {
             setButtonClass('bg-yellow-500');
          }
          else {
-            console.log(`Failed to add email. [res]: ${res.statusText}`);
+            console.log(`Failed to add email. [res]: ${response.statusText}`);
 
             setPlaceholderText('Failed to submit email');
             setButtonText('Error Submitting');
