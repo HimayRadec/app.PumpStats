@@ -1,4 +1,4 @@
-import NewsletterSignUp from "./components/Forms/NewsletterSignUp";
+import NewsletterSignUp from "../components/NewsletterSignUp";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

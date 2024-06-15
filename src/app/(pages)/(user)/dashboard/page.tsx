@@ -1,5 +1,4 @@
 import * as React from "react"
-import { auth } from "@/auth";
 import Link from "next/link"
 import {
    Card,
