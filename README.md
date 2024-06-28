@@ -22,11 +22,13 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Naming Convetions
-For local CSS modules use camelCase class naming. 
-For global CSS files use kebab-case naming.
-
 ## Tailwind Responsive Design
 https://tailwindcss.com/docs/responsive-design
 
 Work mobile first when using tailwind.
+
+
+## TODO:
+- Add onChange handle functions for exerciseName for variant for Input component
+@/src\components\ui\input.tsx
+

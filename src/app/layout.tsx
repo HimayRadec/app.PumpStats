@@ -1,9 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { AuthProvider } from "./Providers";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider"
-
+import { connectToMongoDB } from "@/lib/mongodb";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,20 +26,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const connection = connectToMongoDB();
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </AuthProvider>
-
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
