@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react'
 import Link from "next/link"
+import { useRouter } from "next/navigation";
+
 import { Button } from "@/components/ui/button"
 import {
    Card,
@@ -19,6 +21,8 @@ export function RegisterUser() {
    const [password, setPassword] = useState('')
    const [error, setError] = useState('')
    const [success, setSuccess] = useState('')
+
+   const router = useRouter();
 
    const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
@@ -50,6 +54,7 @@ export function RegisterUser() {
             setEmail('')
             setName('')
             setPassword('')
+            router.push('/api/auth/signin')
          } else {
             setError(data.message)
          }

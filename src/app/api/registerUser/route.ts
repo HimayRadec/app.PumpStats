@@ -1,6 +1,7 @@
 import { connectToMongoDB } from "@/lib/mongodb";
 import { NextResponse } from "next/server";
-import { User } from "@/models/User";
+import bcrypt from "bcryptjs";
+import { User } from "@/models/UserModel";
 
 export const POST = async (request: Request) => {
    try {
@@ -19,17 +20,23 @@ export const POST = async (request: Request) => {
          return NextResponse.json({ message: "User already exists." }, { status: 409 });
       }
 
+      const hashedPassword = await bcrypt.hash(password, 5);
+
       // Create new user
-      const newUser = new User({ name, email, password });
-      await newUser.save();
+      const newUser = await User.create({
+         name: name,
+         email: email,
+         password: hashedPassword
+      });
 
       return NextResponse.json(
-         { message: "User registered.", userId: newUser.userId },
+         { message: "User registered." },
          { status: 201 }
       );
    } catch (error) {
+      console.log(error);
       return NextResponse.json(
-         { message: "Server error." },
+         { message: "Email Already In Use" },
          { status: 500 }
       );
    }

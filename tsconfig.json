@@ -44,7 +44,9 @@
     "src/app/components/RegisterForm.jsx",
     "src/app/components/Navbars.jsx",
     "src/components/charts/AreaChart.jsx",
-    "src/components/WorkoutDetails.jsx"
+    "src/components/WorkoutDetails.jsx",
+    "src/auth.js",
+    "src/app/actions/index.js"
   ],
   "exclude": [
     "node_modules"
