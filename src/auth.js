@@ -1,74 +1,32 @@
 import NextAuth from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
-import GitHubProvider from "next-auth/providers/github";
-import CredentialsProvider from "next-auth/providers/credentials";
-
-import { User } from "@/models/UserModel"
-import bcrypt from "bcryptjs";
+import Credentials from "next-auth/providers/credentials"
+import { getUserFromDb } from "./queries/mongoQueries";
 
 
-export const {
-    handlers: { GET, POST },
-    auth,
-    signIn,
-    signOut,
-} = NextAuth({
-    session: {
-        strategy: 'jwt',
-    },
+export const { handlers, signIn, signOut, auth } = NextAuth({
     providers: [
-        CredentialsProvider({
+        Credentials({
+            // You can specify which fields should be submitted, by adding keys to the `credentials` object.
             credentials: {
                 email: {},
                 password: {},
             },
-            async authorize(credentials) {
-                if (credentials === null) return null;
+            authorize: async (credentials) => {
+                let user = null
 
-                try {
-                    const user = await User.findOne({
-                        email: credentials?.email
-                    })
-                    console.log(user);
-                    if (user) {
-                        const isMatch = bcrypt.compare(
-                            credentials.password,
-                            user.password
-                        );
+                // logic to salt and hash password
 
-                        if (isMatch) {
-                            return user;
-                        } else {
-                            throw new Error("Email or Password is not correct");
-                        }
-                    } else {
-                        throw new Error("User not found");
-                    }
-                } catch (error) {
-                    throw new Error(error);
+                // logic to verify if user exists
+                user = await getUserFromDb(credentials.email, credentials.password)
+
+                if (!user) {
+                    // No user found, so this is their first attempt to login
+                    // meaning this is also the place you could do registration
+                    throw new Error("[auth.js]: User not found.")
                 }
-            },
-        }),
-        GoogleProvider({
-            clientId: process.env.GOOGLE_CLIENT_ID,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-            authorization: {
-                params: {
-                    prompt: "consent",
-                    access_type: "offline",
-                    response_type: "code",
-                },
-            },
-        }),
-        GitHubProvider({
-            clientId: process.env.GITHUB_CLIENT_ID,
-            clientSecret: process.env.GITHUB_CLIENT_SECRET,
-            authorization: {
-                params: {
-                    prompt: "consent",
-                    access_type: "offline",
-                    response_type: "code",
-                },
+
+                // return user object with the their profile data
+                return user
             },
         }),
     ],
