@@ -4,6 +4,7 @@ import { getUserFromDb } from "./queries/mongoQueries";
 
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+    debug: true,
     providers: [
         Credentials({
             // You can specify which fields should be submitted, by adding keys to the `credentials` object.
