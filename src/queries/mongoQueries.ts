@@ -2,22 +2,17 @@ import { User } from "@/models/UserModel"
 import { connectToMongoDB } from "@/lib/mongodb";
 import bcrypt from "bcryptjs";
 
-export async function getUserFromDb(email: string, password: string) {
+// Only gets the user from the database. No password checking.
+export async function getUserFromDb(email: string) {
    await connectToMongoDB();
 
-   const user = await User.findOne({ email: email });
-
-   if (!user) {
-      console.log('[Query]: User not found');
-      return null;
+   try {
+      const user = await User.findOne({ email: email });
+      return user;
    }
-
-   const passwordMatch = await bcrypt.compare(password, user.password);
-   if (!passwordMatch) {
-      console.log('[Query]: Password does not match');
-      return null;
+   catch (error) {
+      console.error('[Query]: Failed to find user.', error);
+      throw new Error('Failed to fetch user.');
    }
-
-   return user;
 
 }
