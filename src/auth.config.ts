@@ -1,3 +1,10 @@
+
+/*
+Created By: Himay 1/7/2024
+Last Edit By: Himay 1/7/2024
+Description: This file checks if the user is authenticated and redirects appropriately.
+*/
+
 import type { NextAuthConfig } from 'next-auth';
 
 export const authConfig = {

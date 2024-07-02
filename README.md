@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 This is a template with user email/password login to a MongoDB Database setup.
 Your .env.local file must contain the following tokens
@@ -9,9 +7,6 @@ NEXTAUTH_URL = The URL the project will be accessed through when running (in dev
 NEXTAUTH_SECRET = Used to encrypt the NextAuth.js JWT, and to hash email verification tokens. This is the default value for the secret option in NextAuth and Middleware.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-Every route inside of the middleware.js const.matcher variable is protected by authentication. Edit these as needed.
-Note the middleware.js file must be inside the src file. 
 
 ## Learn More
 
@@ -27,8 +22,11 @@ https://tailwindcss.com/docs/responsive-design
 
 Work mobile first when using tailwind.
 
-
-## TODO:
-- Add onChange handle functions for exerciseName for variant for Input component
-@/src\components\ui\input.tsx
+## Code Standards
+The top of every file must have a heading exactly like the following:
+/*
+Created By: FirstName LastName day/month/year
+Last Edited By: FirstName LastName day/month/year
+File Summary: Purpose for files existance
+*/
 
