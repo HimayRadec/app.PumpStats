@@ -10,11 +10,11 @@ export const authConfig = {
          const path = nextUrl.pathname;
 
          // Paths that don't require authentication
-         const unprotectedPaths = ['/', '/login', '/register'];
+         const authorizationPaths = ['/login', '/register'];
 
          if (isLoggedIn) {
             // Redirect to dashboard if user is already logged in and tries to access login or register page
-            if (path === '/login' || path === '/register') {
+            if (authorizationPaths.includes(path)) {
                return Response.redirect(new URL('/dashboard', nextUrl));
             }
 
@@ -22,8 +22,8 @@ export const authConfig = {
             return true;
          }
 
-         // Allow access to unprotected paths
-         if (unprotectedPaths.includes(path)) {
+         // Allow access to authorization paths
+         if (authorizationPaths.includes(path)) {
             return true;
          }
 
