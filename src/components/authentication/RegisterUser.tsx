@@ -54,7 +54,7 @@ export function RegisterUser() {
             setEmail('')
             setName('')
             setPassword('')
-            router.push('/api/auth/signin')
+            router.push('/login')
          } else {
             setError(data.message)
          }
@@ -116,7 +116,7 @@ export function RegisterUser() {
                {success && <p className="mt-4 text-green-500">{success}</p>}
                <div className="mt-4 text-center text-sm">
                   Already have an account?{" "}
-                  <Link href="/signin" className="underline">
+                  <Link href="/login" className="underline">
                      Sign in
                   </Link>
                </div>
