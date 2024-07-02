@@ -7,14 +7,28 @@ export const authConfig = {
    callbacks: {
       authorized({ auth, request: { nextUrl } }) {
          const isLoggedIn = !!auth?.user;
-         const isOnDashboard = nextUrl.pathname.startsWith('/dashboard');
-         if (isOnDashboard) {
-            if (isLoggedIn) return true;
-            return false; // Redirect unauthenticated users to login page
-         } else if (isLoggedIn) {
-            return Response.redirect(new URL('/dashboard', nextUrl));
+         const path = nextUrl.pathname;
+
+         // Paths that don't require authentication
+         const unprotectedPaths = ['/', '/login', '/register'];
+
+         if (isLoggedIn) {
+            // Redirect to dashboard if user is already logged in and tries to access login or register page
+            if (path === '/login' || path === '/register') {
+               return Response.redirect(new URL('/dashboard', nextUrl));
+            }
+
+            // Allow access to all other pages if user is logged in
+            return true;
          }
-         return true;
+
+         // Allow access to unprotected paths
+         if (unprotectedPaths.includes(path)) {
+            return true;
+         }
+
+         // Redirect to login page if user is not logged in and tries to access any protected page
+         return Response.redirect(new URL('/login', nextUrl));
       },
    },
    providers: [], // Add providers with an empty array for now
