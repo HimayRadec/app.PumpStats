@@ -1,5 +1,5 @@
 import React from 'react'
-import { RegisterUser } from '@/components/authentication/RegisterUser'
+import { RegisterUser } from '@/components/authentication/UserRegistration'
 
 function Register() {
    return (

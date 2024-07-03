@@ -12,9 +12,9 @@ export interface Exercise {
 export interface WorkoutData {
    workoutName: string;
    workoutId: string;
-   notes?: string;
-   duration?: number;
-   loggedDate?: Date;
+   // notes?: string;
+   // duration?: number;
+   // loggedDate?: Date;
    exercises: Exercise[];
 }
 

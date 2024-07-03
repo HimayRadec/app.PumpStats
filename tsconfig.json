@@ -46,7 +46,7 @@
     "src/components/charts/AreaChart.jsx",
     "src/components/WorkoutDetails.jsx",
     "src/auth.ts",
-    "src/app/actions/index.js",
+    "src/actions/index.js",
     "src/middleware.ts"
   ],
   "exclude": [

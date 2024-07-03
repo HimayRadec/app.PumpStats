@@ -1,6 +1,6 @@
 'use client'
 
-import { doCredentialLogin } from "@/app/actions";
+import { doCredentialLogin } from "@/actions";
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";

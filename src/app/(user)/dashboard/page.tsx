@@ -1,6 +1,6 @@
 import React from 'react'
 import { auth } from "@/auth";
-import Logout from '@/components/authentication/LogoutUser';
+import Logout from '@/components/authentication/UserLogout';
 
 async function Dashboard() {
    const session = await auth();

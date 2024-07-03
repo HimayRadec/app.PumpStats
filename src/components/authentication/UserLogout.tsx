@@ -1,4 +1,4 @@
-import { doLogout } from "@/app/actions"
+import { doLogout } from "@/actions"
 
 const Logout = () => {
    return (

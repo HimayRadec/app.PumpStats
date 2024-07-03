@@ -9,7 +9,9 @@ const inputVariants = cva(
     variants: {
       variant: {
         default: "border-input bg-background",
+        workoutName: "border-none bg-transparent text-3xl font-semibold pl-0",
         exerciseName: "border-none bg-transparent text-xl font-semibold pl-0",
+        setInput: "border bg-transparent",
         outline: "border border-input bg-background",
         ghost: "bg-transparent",
       },
@@ -29,6 +31,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, variant, type, ...props }, ref) => {
     return (
       <input
+        type={type}
         className={cn(inputVariants({ variant, className }))}
         ref={ref}
         {...props}
